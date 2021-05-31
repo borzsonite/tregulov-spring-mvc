@@ -11,14 +11,14 @@ public class MyController {
         return "first-view";
     }
 
-    @RequestMapping("/ask-details")
+    @RequestMapping("/askDetails")
     public String askDetails () {
-        return "ask-details";
+        return "ask-emp-details-view";
     }
 
-    @RequestMapping("show-details")
+    @RequestMapping("showDetails")
     public String showDetails () {
-        return "show-details";
+        return "show-emp-details-view";
     }
 
 

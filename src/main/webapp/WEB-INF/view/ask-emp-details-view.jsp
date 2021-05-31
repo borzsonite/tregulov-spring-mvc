@@ -12,5 +12,11 @@
 </head>
 <body>
 <h2>Ask details</h2>
+
+<form action = "/showDetails" method="get">
+    <input type="text" name="employeeName" placeholder="Enter your name"/>
+    <input type="submit"/>
+</form>
+
 </body>
 </html>
