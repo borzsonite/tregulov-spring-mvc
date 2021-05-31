@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Serge
-  Date: 30.05.2021
-  Time: 23:22
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -13,7 +6,15 @@
 <body>
 <h2>Show details</h2>
 <%--<h3>Welcome, ${param.employeeName}!</h3>--%> <%--параметр берется из view--%>
-<h3>Welcome, ${empName}! ${descripiton}</h3> <%--параметр прописан в контроллере стр. 31--%>
-
+<%--<h3>Welcome, ${empName}! ${descripiton}</h3> &lt;%&ndash;параметр прописан в контроллере стр. 31&ndash;%&gt;--%>
+Your name: ${employee.name}
+<br>
+Your surname: ${employee.surname}
+<br>
+Your salary: ${employee.salary}
+<br>
+Your department ${employee.department}
+<br>
+Your car is: ${employee.carBand}
 </body>
 </html>

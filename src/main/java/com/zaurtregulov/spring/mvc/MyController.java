@@ -2,6 +2,7 @@ package com.zaurtregulov.spring.mvc;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -12,14 +13,28 @@ import javax.servlet.http.HttpServletRequest;
 public class MyController {
 
     @RequestMapping("/")
-    public String showFirstView () {
+    public String showFirstView() {
         return "first-view";
     }
 
     @RequestMapping("/askDetails")
-    public String askDetails () {
+    public String askDetails(Model model) {
+        model.addAttribute("employee", new Employee());
         return "ask-emp-details-view";
     }
+
+    @RequestMapping("/showDetails")
+    public String showDetails(@ModelAttribute("employee") Employee emp) {
+        emp.setName("Mr. " + emp.getName());
+        emp.setSurname(emp.getSurname() + "!");
+        emp.setSalary(emp.getSalary() * 10);
+        return "show-emp-details-view";
+    }
+
+//    @RequestMapping("/askDetails")
+//    public String askDetails () {
+//        return "ask-emp-details-view";
+//    }
 
 //    @RequestMapping("/showDetails")
 //    public String showDetails () {
@@ -35,13 +50,13 @@ public class MyController {
 //        return "show-emp-details-view";
 //    }
 
-    @RequestMapping("/showDetails")
-    public String showDetails (@RequestParam("employeeName") String requestParam, Model model) { // получение данных путем  @RequestParam и добавление их в модель и передача во view
-        requestParam = "MR. " + requestParam;
-        model.addAttribute("empName", requestParam); // добавили в модель
-        model.addAttribute("descripiton", " Nice to see you!");
-        return "show-emp-details-view";
-    }
+//    @RequestMapping("/showDetails")
+//    public String showDetails (@RequestParam("employeeName") String requestParam, Model model) { // получение данных путем  @RequestParam и добавление их в модель и передача во view
+//        requestParam = "MR. " + requestParam;
+//        model.addAttribute("empName", requestParam); // добавили в модель
+//        model.addAttribute("descripiton", " Nice to see you!");
+//        return "show-emp-details-view";
+//    }
 
 
 }
