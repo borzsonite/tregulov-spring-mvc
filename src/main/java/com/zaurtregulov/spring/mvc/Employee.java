@@ -1,9 +1,11 @@
 package com.zaurtregulov.spring.mvc;
 
+import javax.validation.constraints.Size;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Employee {
+    @Size(min = 2, message = "Name must be min 2 symbols")
     private String name;
     private String surname;
     private int salary;
@@ -11,6 +13,8 @@ public class Employee {
     private Map<String, String> departments;
     private String carBand;
     private Map<String, String> carBrands;
+    private String[] languages;
+    private Map<String, String> languageList;
 
     public String getName() {
         return name;
@@ -68,6 +72,22 @@ public class Employee {
         this.carBrands = carBrands;
     }
 
+    public String[] getLanguages() {
+        return languages;
+    }
+
+    public void setLanguages(String[] languages) {
+        this.languages = languages;
+    }
+
+    public Map<String, String> getLanguageList() {
+        return languageList;
+    }
+
+    public void setLanguageList(Map<String, String> languageList) {
+        this.languageList = languageList;
+    }
+
     public Employee() {
         departments = new HashMap<>();
         departments.put("IT", "Information technology");
@@ -78,6 +98,11 @@ public class Employee {
         carBrands.put("MB", "Mersedes Bentz");
         carBrands.put("BMW", "BMW");
         carBrands.put("Audi", "Audi");
+
+        languageList = new HashMap<>();
+        languageList.put("English","EN");
+        languageList.put("Duchland","DE");
+        languageList.put("French","FR");
     }
 
     @Override

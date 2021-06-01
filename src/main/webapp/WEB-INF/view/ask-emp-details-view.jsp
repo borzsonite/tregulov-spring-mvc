@@ -21,6 +21,7 @@
 
 <form:form action="showDetails" modelAttribute="employee">
     <form:input path="name"/>
+    <form:errors path="name"/>
     <br><br>
     <form:input path="surname"/>
     <br><br>
@@ -39,6 +40,12 @@
 <%--    BMW<form:radiobutton path="carBand" value="BMW"/>--%>
 <%--    MB<form:radiobutton path="carBand" value="MB"/>--%>
 <%--    Audi<form:radiobutton path="carBand" value="Audi"/>--%>
+    <br>
+    Foreign language(s)
+    <form:checkboxes path="languages" items="${employee.languageList}"/>
+<%--    EN <form:checkbox path="languages" value="English"/>--%>
+<%--    DE <form:checkbox path="languages" value="Dauchland"/>--%>
+<%--    FR <form:checkbox path="languages" value="Franch"/>--%>
     <br>
     <input type="submit" value="OK">
 </form:form>
