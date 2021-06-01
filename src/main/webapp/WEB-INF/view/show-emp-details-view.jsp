@@ -24,6 +24,10 @@ Foreign language(s):
         <li>${lang}</li>
     </c:forEach>
 </ul>
+<br>
+Phone number: ${employee.phoneNumber}
+<br>
+Email: ${employee.email}
 
 </body>
 </html>

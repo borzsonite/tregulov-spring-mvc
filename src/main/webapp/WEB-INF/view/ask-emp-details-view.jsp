@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="from" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: Serge
@@ -24,8 +25,10 @@
     <form:errors path="name"/>
     <br><br>
     <form:input path="surname"/>
+    <form:errors path="surname"/>
     <br><br>
     <form:input path="salary"/>
+    <form:errors path="salary"/>
     <br><br>
     <form:select path="department">
 <%--        <form:option value="Information technology" label="IT"/>--%>
@@ -47,7 +50,14 @@
 <%--    DE <form:checkbox path="languages" value="Dauchland"/>--%>
 <%--    FR <form:checkbox path="languages" value="Franch"/>--%>
     <br>
+    Phone number:<form:input path="phoneNumber"/>
+    <from:errors path="phoneNumber"/>
+    <br>
+   Email:<form:input path="email"/>
+    <form:errors path="email"/>
     <input type="submit" value="OK">
+
+
 </form:form>
 
 </body>

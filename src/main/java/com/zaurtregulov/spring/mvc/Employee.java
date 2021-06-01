@@ -1,13 +1,17 @@
 package com.zaurtregulov.spring.mvc;
 
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Employee {
     @Size(min = 2, message = "Name must be min 2 symbols")
     private String name;
+    //@NotEmpty(message = "Surname must not be empty")
+    @NotBlank(message = "Surname must not be empty")
     private String surname;
+    @Min(value = 500, message = "must be greater than 499")
+    @Max(value = 1001, message = "must be less than 1001")
     private int salary;
     private String department;
     private Map<String, String> departments;
@@ -15,6 +19,9 @@ public class Employee {
     private Map<String, String> carBrands;
     private String[] languages;
     private Map<String, String> languageList;
+    @Pattern(regexp = "\\d{3}-\\d{2}-\\d{2}", message = "use pattern xxx-xx-xx")
+    private String phoneNumber;
+    private String email;
 
     public String getName() {
         return name;
@@ -86,6 +93,22 @@ public class Employee {
 
     public void setLanguageList(Map<String, String> languageList) {
         this.languageList = languageList;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Employee() {
